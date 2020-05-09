@@ -10,11 +10,14 @@
  * 修改变更号: 
  * 修改内容: TODO
  */
-package com.java.db.db.mybatis.mapper;
+package com.java.db.mybatis.mapper;
+
+import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Select;
 
-import com.java.db.db.mybatis.entity.ProvincialEntity;
+import com.java.db.mybatis.entity.ProvincialEntity;
 
 /**
  * @Title ProvincialMapper
@@ -27,6 +30,10 @@ import com.java.db.db.mybatis.entity.ProvincialEntity;
  * 
  */
 public interface ProvincialMapper {
-    @Insert("INSERT INTO provincial(provincialID,provincialName) VALUES(#{id}, #{name})")
+    @Insert("INSERT INTO provincial(provincialID,provincialName) VALUES(#{provincialID}, #{provincialName})")
     void insert(ProvincialEntity user);
+    @Select("select * from provincial")
+    List<ProvincialEntity> queryAll();
+    @Select("SELECT * FROM provincial WHERE provincialID = #{id}") //3
+    ProvincialEntity queryOne(int id);
 }

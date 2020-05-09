@@ -10,7 +10,7 @@
  * 修改变更号: 
  * 修改内容: TODO
  */
-package com.java.db.db.mybatis.entity;
+package com.java.db.mybatis.entity;
 
 /**
  * @Title ProvincialEntity
