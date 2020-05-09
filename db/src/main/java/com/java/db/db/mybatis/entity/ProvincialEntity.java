@@ -25,4 +25,25 @@ package com.java.db.db.mybatis.entity;
 public class ProvincialEntity {
     private int provincialID;
     private String provincialName;
+    public ProvincialEntity () {
+        super ();
+    }
+    public ProvincialEntity ( int provincialID, String provincialName ) {
+        super ();
+        this.provincialID = provincialID;
+        this.provincialName = provincialName;
+    }
+    public int getProvincialID () {
+        return provincialID;
+    }
+    public void setProvincialID ( int provincialID ) {
+        this.provincialID = provincialID;
+    }
+    public String getProvincialName () {
+        return provincialName;
+    }
+    public void setProvincialName ( String provincialName ) {
+        this.provincialName = provincialName;
+    }
+    
 }

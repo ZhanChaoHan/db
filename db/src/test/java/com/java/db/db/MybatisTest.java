@@ -17,11 +17,14 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.java.db.db.mybatis.entity.CityEntity;
+import com.java.db.db.mybatis.entity.ProvincialEntity;
 import com.java.db.db.mybatis.mapper.CityMapper;
+import com.java.db.db.mybatis.mapper.ProvincialMapper;
 
 /**
  * @Title MybatisTest
@@ -34,10 +37,18 @@ import com.java.db.db.mybatis.mapper.CityMapper;
  * 
  */
 @SpringBootTest
+@MapperScan("com.java.db.mybatis.mapper")
 public class MybatisTest {
     @Autowired
     private CityMapper cityMapper;
-
+    @Autowired
+    private ProvincialMapper provincialMapper;
+    
+    @Test
+    public void testProvincialInsert() {
+        provincialMapper.insert ( new ProvincialEntity ( 123, "一二三" ) );
+    }
+    /*
     @Test
     public void testInsert() throws Exception {
         cityMapper.insert(new CityEntity(12, "a123456", 1254));
@@ -62,4 +73,5 @@ public class MybatisTest {
         userMapper.update(user);
         Assert.assertTrue(("neo".equals(cityMapper.getOne(30l))));
     }
+    */
 }
