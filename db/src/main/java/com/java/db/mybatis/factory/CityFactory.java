@@ -16,7 +16,8 @@ import java.util.Map;
 
 import org.apache.ibatis.jdbc.SQL;
 
-import com.java.db.db.mybatis.entity.CityEntity;
+import com.java.db.mybatis.entity.CityEntity;
+
 
 /**
  * @Title CityFactory

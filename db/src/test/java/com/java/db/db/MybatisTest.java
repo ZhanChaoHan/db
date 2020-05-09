@@ -37,7 +37,7 @@ import com.java.db.mybatis.mapper.ProvincialMapper;
  * 
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@MapperScan("com.java.db.db.mybatis.mapper")//添加mapper包扫描避免所有类加@Mapper注解
+@MapperScan("com.java.db.mybatis.mapper")//添加mapper包扫描避免所有类加@Mapper注解
 //@Transactional //支持事物，@SpringBootTest 事物默认自动回滚
 //@Rollback // 事务自动回滚，不自动回滚@Rollback(false)
 @SpringBootTest
